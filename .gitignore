@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+/packages/*/node_modules
+/packages/*/dist
+
 # testing
 /coverage
 
