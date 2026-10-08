@@ -110,14 +110,6 @@ export function FloodFooter() {
   return (
     <footer className="relative overflow-hidden bg-sc-flood text-sc-flood-text">
       <div className={`${CONTAINER} pt-24`}>
-        <nav
-          aria-label={`${PRODUCT_NAME} footer`}
-          className="flex flex-wrap items-baseline gap-x-8 gap-y-3 pb-4 font-sc-annot text-[11px] tracking-[0.16em] uppercase text-sc-flood-chrome"
-        >
-          <Link href={ROUTES.home} className="transition-colors duration-150 hover:text-sc-flood-text">
-            ← Portfolio
-          </Link>
-        </nav>
         <p className="font-sc-annot text-[11px] tracking-[0.16em] uppercase text-sc-flood-text">
           Built by{" "}
           <Link href={ROUTES.home} className="underline decoration-1 underline-offset-4 transition-opacity duration-150 hover:opacity-70">
