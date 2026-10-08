@@ -1,0 +1,111 @@
+/* Scrawl — handwriting-to-font study under /scrawl. */
+html:has(.scrawl-root) {
+  color-scheme: light;
+  background: #ffffff;
+}
+
+html:has(.scrawl-root) body {
+  background: #ffffff;
+  color: #111111;
+}
+
+.scrawl-root {
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-scrawl-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+.scrawl-root a,
+.scrawl-root button {
+  cursor: pointer;
+}
+
+.scrawl-root button:disabled {
+  cursor: default;
+}
+
+.scrawl-root canvas {
+  display: block;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.scrawl-root input[type="range"] {
+  appearance: none;
+  cursor: ew-resize;
+  background: transparent;
+  width: 100%;
+  height: 18px;
+}
+
+.scrawl-root input[type="range"]::-webkit-slider-runnable-track {
+  background: #e2e2e2;
+  height: 1px;
+}
+
+.scrawl-root input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  margin-top: -5px;
+}
+
+.scrawl-root input[type="range"]:hover::-webkit-slider-thumb {
+  background: #111111;
+}
+
+.scrawl-root input[type="range"]::-moz-range-track {
+  background: #e2e2e2;
+  height: 1px;
+}
+
+.scrawl-root input[type="range"]::-moz-range-thumb {
+  background: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+@media (pointer: coarse) {
+  .scrawl-root input[type="range"] {
+    height: 44px;
+  }
+
+  .scrawl-root input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    margin-top: -7px;
+  }
+
+  .scrawl-root input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.scrawl-root :focus-visible {
+  outline: 1px solid #111111;
+  outline-offset: 2px;
+}
+
+.scrawl-panel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #e2e2e2 transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrawl-root *,
+  .scrawl-root *::before,
+  .scrawl-root *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
