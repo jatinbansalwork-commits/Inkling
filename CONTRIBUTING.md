@@ -43,8 +43,16 @@ Before opening a pull request:
 2. If you touched the font engine, export a font and install it on at least one OS to check it.
 3. Keep the pull request focused on one change and describe what it does and why.
 
+## Versioning
+
+`version` in `packages/inkling/package.json` is always the next release. Add every package change
+to `packages/inkling/CHANGELOG.md` under **Unreleased**; don't bump the version per change.
+
 ## Releasing (maintainers)
 
-1. Bump `version` in `packages/inkling/package.json`.
-2. From `packages/inkling`, run `npm publish --access public`.
-3. Tag the release: `git tag inkling@<version> && git push --tags`.
+1. In `packages/inkling/CHANGELOG.md`, rename `## Unreleased (x.y.z)` to `## x.y.z` and commit.
+2. Tag and push: `git tag inkling@x.y.z && git push origin main inkling@x.y.z`.
+3. The Release workflow checks the tag matches the package version, builds, publishes to npm and
+   creates a GitHub release.
+4. Start the next cycle: bump `version` (patch, minor or major) and add a new
+   `## Unreleased (next)` heading.

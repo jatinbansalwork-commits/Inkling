@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    tags: ["inkling@*"]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: Check tag matches package version
+        run: |
+          version=$(node -p "require('./packages/inkling/package.json').version")
+          if [ "inkling@$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match package version $version"; exit 1
+          fi
+      - name: Install app dependencies (the package builds from the app's source)
+        run: npm ci
+      - name: Install package dependencies
+        run: npm ci
+        working-directory: packages/inkling
+      - run: npm publish --access public
+        working-directory: packages/inkling
+      - name: Create GitHub release
+        run: gh release create "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
