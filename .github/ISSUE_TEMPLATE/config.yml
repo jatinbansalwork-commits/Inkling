@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Try Inkling
+    url: https://jatinbansal.vercel.app/inkling
+    about: Make a font from your handwriting in the browser.
+  - name: Package README
+    url: https://github.com/jatinbansalwork-commits/Inkling/tree/main/packages/inkling#readme
+    about: Font engine API, coordinate system and troubleshooting.

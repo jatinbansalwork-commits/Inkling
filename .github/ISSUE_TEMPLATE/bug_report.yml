@@ -1,0 +1,31 @@
+name: Bug report
+description: Something doesn't work or a font comes out wrong.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you were doing, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where?
+      options:
+        - Drawing letters
+        - Review and settings
+        - Export or installing the font
+        - Signature animation
+        - npm package (@jatin_ux/inkling)
+  - type: input
+    id: env
+    attributes:
+      label: Browser and OS
+      placeholder: Safari 19 on macOS, Chrome on Windows 11...
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots, files or code
+      description: Drag in a screenshot or the exported font, or paste a code snippet.

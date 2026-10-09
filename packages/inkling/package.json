@@ -1,14 +1,19 @@
 {
   "name": "@jatin_ux/inkling",
-  "version": "0.1.0",
-  "description": "Turn hand-drawn strokes into installable OTF and WOFF fonts, in the browser.",
+  "version": "0.1.1",
+  "description": "Turn hand-drawn strokes into installable OTF and WOFF fonts, in the browser or Node. Regular and Bold weights, automatic accents, zero dependencies.",
   "license": "MIT",
+  "author": "Jatin Bansal",
+  "homepage": "https://jatinbansal.vercel.app/inkling",
+  "bugs": {
+    "url": "https://github.com/jatinbansalwork-commits/Inkling/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jatinbansalwork-commits/Inkling.git",
     "directory": "packages/inkling"
   },
-  "keywords": ["font", "handwriting", "opentype", "otf", "woff", "font-maker"],
+  "keywords": ["font", "handwriting", "opentype", "otf", "woff", "font-maker", "font-generator", "typography", "browser", "signature"],
   "type": "module",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -20,7 +25,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "build": "tsup",
